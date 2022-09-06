@@ -1,0 +1,31 @@
+﻿@model Musiciann
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update Musician</h1>
+<br />
+<br />
+<form method="post" action="/Musician/Update/@Model.Id">
+  <div class="form-group">
+    <label for="email">Musician Name:</label>
+        <input type="text" class="form-control" value="@Model.Name" placeholder="Name" name="Name" id="Name">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Phone:</label>
+        <input type="number" class="form-control" value="@Model.Phone" placeholder="Enter Phone" name="Phone" id="Phone">
+  </div>
+    <div class="form-group">
+        <label for="pwd">City:</label>
+        <input type="text" class="form-control" value="@Model.City" placeholder="Enter City" name="City" id="City">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Street:</label>
+        <input type="text" class="form-control" value="@Model.Street"  placeholder="Enter Street" name="Street" id="Street">
+    </div>
+    <br />
+    <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a href="/Musician/Index" class="btn btn-success">Back To List</a>

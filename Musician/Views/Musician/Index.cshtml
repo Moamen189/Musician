@@ -1,0 +1,55 @@
+﻿@model List<Musiciann>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Musican Index</h1>
+<br />
+<br />
+<a href="/Musician/Create" class="btn btn-outline-success">New Musician</a>
+<br />
+<br />
+
+<table class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>City</th>
+			<th>Street</th>
+			<th>Information</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model)
+		{
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.Phone
+				</td>
+				<td>
+					@item.City
+				</td>
+				<td>
+					@item.Street
+				</td>
+				<td><a href="/Musician/Details/@item.Id" class="btn btn-info">Details</a>
+
+				<a href="/Musician/Update/@item.Id" class="btn btn-secondary">Update</a>
+					<a href="/Musician/Delete/@item.Id" class="btn-danger">Delete</a>
+				</td>
+
+			</tr>
+		}
+		
+	</tbody>
+</table>
+

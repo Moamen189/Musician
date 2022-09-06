@@ -1,0 +1,27 @@
+﻿@model Album
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Album</h1>
+<br />
+<br />
+
+<form method="post" action="/Album/Create">
+  <div class="form-group">
+    <label for="email">Date:</label>
+        <input type="text" class="form-control" value="@Model.Date" placeholder="Date" name="Date" id="Date">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Title:</label>
+        <input type="text" class="form-control" value="@Model.Title" placeholder="Enter Title" name="Title" id="Title">
+  </div>
+    <div class="form-group">
+        <label for="pwd">Musician Id:</label>
+        <input type="number" class="form-control" value="@Model.MusicianId" placeholder="Enter Musician Id" name="MusicianId" id="MusicianId">
+    </div>
+    <br />
+    <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

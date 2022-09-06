@@ -1,0 +1,17 @@
+﻿@model Song
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Song Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <p class="card-text">@Model.Author</p>
+
+
+        <a href="/Song/Index" class="btn btn-primary">Back To List</a>
+    </div>
+</div>
+

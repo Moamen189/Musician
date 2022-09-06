@@ -1,0 +1,25 @@
+﻿@model Song
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update Song</h1>
+<br />
+<br />
+
+<form method="post" action="/Song/Update/@Model.Title">
+
+    <div class="form-group">
+        <label for="pwd">Title:</label>
+        <input type="number" class="form-control" value="@Model.Title" placeholder="Enter Title" name="Title" id="Title">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Author:</label>
+        <input type="text" class="form-control" value="@Model.Author" placeholder="Enter Author" name="Author" id="Author">
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a href="/Song/Index" class="btn btn-success">Back To List</a>

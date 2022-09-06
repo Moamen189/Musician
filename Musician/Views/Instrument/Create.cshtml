@@ -1,0 +1,23 @@
+﻿@model Instrument
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Instrument</h1>
+<br />
+<br />
+<form method="post" action="/Instrument/Create">
+
+    <div class="form-group">
+        <label for="pwd">Name:</label>
+        <input type="number" class="form-control" value="@Model.Name" placeholder="Enter Name" name="Name" id="Name">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Key:</label>
+        <input type="text" class="form-control" value="@Model.Key" placeholder="Enter Key" name="Key" id="Key">
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

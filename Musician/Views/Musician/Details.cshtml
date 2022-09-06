@@ -1,0 +1,18 @@
+﻿@model Musiciann
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Musician Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+      <p class="card-text">@Model.Id</p>
+        <p class="card-text">@Model.Phone</p>
+        <p class="card-text">@Model.City</p>
+        <p class="card-text">@Model.Street</p>
+
+        <a href="/Musician/Index" class="btn btn-primary">Back To List</a>
+    </div>
+</div>

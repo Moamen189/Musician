@@ -1,0 +1,43 @@
+﻿@model Album
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update Album</h1>
+<br />
+<br />
+<form method="post" action="/Album/Update/@Model.Id">
+    <div class="form-group">
+        <label for="email">Date:</label>
+        <input type="text" class="form-control" value="@Model.Date" placeholder="Date" name="Date" id="Date">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Title:</label>
+        <input type="text" class="form-control" value="@Model.Title" placeholder="Enter Title" name="Title" id="Title">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Musician Id:</label>
+       @* <input type="text" class="form-control" value="@Model.MusicianId" placeholder="Enter Musician Id" name="MusicianId" id="MusicianId">*@
+        <select name="MusicianId" class="form-control">
+            @foreach (var item in ViewBag.Musicers)
+            {
+                if(item.id == Model.MusicianId){
+                    <option value="@item.Id" selected>
+                        @item.Name
+                    </option>
+                }else{
+                    <option value="@item.Id">
+                        @item.Name
+                    </option>
+                }
+               
+            }
+       </select>
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+
+<a href="/Album/Index" class="btn btn-success">Back To List</a>
