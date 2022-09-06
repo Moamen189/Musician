@@ -65,6 +65,8 @@ namespace Musician.Controllers
             }
             else
             {
+                var mus = context.Musicians.ToList();
+                ViewBag.Musicers = mus;
                 return View("Update", NewAlbum);
             }
         }
