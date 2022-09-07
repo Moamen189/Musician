@@ -16,21 +16,21 @@
         <input type="text" class="form-control" value="@Model.Title" placeholder="Enter Title" name="Title" id="Title">
     </div>
     <div class="form-group">
-        <label for="pwd">Musician Id:</label>
+        <label for="pwd">Musician Name:</label>
        @* <input type="text" class="form-control" value="@Model.MusicianId" placeholder="Enter Musician Id" name="MusicianId" id="MusicianId">*@
         <select name="MusicianId" class="form-control">
             @foreach (var item in ViewBag.Musicers)
             {
-                if(item.id == Model.MusicianId){
+                @*if(item.id == Model.MusicianId){*@
                     <option value="@item.Id" selected>
                         @item.Name
                     </option>
-                }else{
+              @*  }else{
                     <option value="@item.Id">
                         @item.Name
                     </option>
                 }
-               
+               *@
             }
        </select>
     </div>

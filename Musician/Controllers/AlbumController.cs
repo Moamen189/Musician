@@ -26,6 +26,8 @@ namespace Musician.Controllers
 
         public IActionResult Create()
         {
+            var mus = context.Musicians.ToList();
+            ViewBag.Musicers = mus;
             return View(new Album());
         }
         [HttpPost]
@@ -39,6 +41,8 @@ namespace Musician.Controllers
             }
             else
             {
+                var mus = context.Musicians.ToList();
+                ViewBag.Musicers = mus;
                 return View("Create", album);
             }
         }

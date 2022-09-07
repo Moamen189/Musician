@@ -44,9 +44,22 @@ namespace Musician
 
             app.UseEndpoints(endpoints =>
             {
+
+                //endpoints.MapControllerRoute(
+                //   name: "Second",
+                //   pattern: "{controller=Home}/{action=Index}/{title?}");
+
+
+                //endpoints.MapControllerRoute(
+                //   name: "third",
+                //   pattern: "{controller=Home}/{action=Index}/{name?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+
+                     );
+
             });
         }
     }
