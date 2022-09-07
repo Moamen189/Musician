@@ -51,7 +51,7 @@ namespace Musician.Controllers
         public IActionResult Update(string title , Song NewSong)
         {
             var song = context.Songs.FirstOrDefault(X => X.Title == title);
-            if (song != null)
+            if (song.Author != null)
             {
                 song.Author = NewSong.Author;
             

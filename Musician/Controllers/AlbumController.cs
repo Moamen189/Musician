@@ -54,7 +54,7 @@ namespace Musician.Controllers
         public IActionResult Update(int id , Album NewAlbum)
         {
             var album = context.Albums.FirstOrDefault(X => X.Id == id);
-            if (album != null)
+            if (album.Title != null)
             {
                 album.Title = NewAlbum.Title;
                 album.Date = NewAlbum.Date;

@@ -52,7 +52,7 @@ namespace Musician.Controllers
         public IActionResult Update(string name , Instrument NewInstrument)
         {
             var instrument = context.Instruments.FirstOrDefault(X => X.Name == name);
-            if (instrument != null)
+            if (instrument.Key != null)
             {
                 instrument.Key = instrument.Key;
                 context.SaveChanges();

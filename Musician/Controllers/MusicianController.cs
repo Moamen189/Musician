@@ -53,7 +53,7 @@ namespace Musician.Controllers
         public IActionResult Update(int id , Musiciann NewMusiciann)
         {
            var musician = context.Musicians.FirstOrDefault(X => X.Id == id);
-            if (musician != null)
+            if (musician.Name != null)
             {
                 musician.Name = NewMusiciann.Name;
                 musician.Phone = NewMusiciann.Phone;
