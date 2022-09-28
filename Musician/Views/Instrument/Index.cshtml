@@ -12,6 +12,7 @@
 <table class="table table-hover table-bordered">
 	<thead>
 		<tr>
+			<th>Id</th>
 			<th>Name</th>
 			<th>Key</th>
 			<th>Information</th>
@@ -25,14 +26,18 @@
 		{
 			<tr>
 				<td>
+					@item.Id
+				</td>
+				<td>
 					@item.Name
 				</td>
 				<td>
 					@item.Key
 				</td>
-				<td><a href="/Instrument/Details/@item.Name" class="btn btn-outline-info">Details</a>
-					<a href="/Instrument/Update/@item.Name" class="btn btn-outline-secondary">Update</a>
-					<a href="/Instrument/Delete/@item.Name" class="btn-outline-danger">Delete</a>
+				<td>
+					<a href="/Instrument/Details/@item.Id" class="btn btn-outline-info">Details</a>
+					<a href="/Instrument/Update/@item.Id" class="btn btn-outline-secondary">Update</a>
+					<a href="/Instrument/Delete/@item.Id" class="btn-outline-danger">Delete</a>
 				</td>
 
 			</tr>
