@@ -54,7 +54,9 @@ namespace Musician.Controllers
             var instrument = context.Instruments.FirstOrDefault(X => X.Id == id);
             if (instrument.Key != null)
             {
+
                 instrument.Key = instrument.Key;
+                instrument.Name = instrument.Name;
                 context.SaveChanges();
                 return RedirectToAction("Index");
 

@@ -16,9 +16,9 @@ namespace Musician.Controllers
             return View(Song);
         }
 
-        public IActionResult Details(string title)
+        public IActionResult Details(int id)
         {
-            Song song = context.Songs.FirstOrDefault(s => s.Title == title);
+            Song song = context.Songs.FirstOrDefault(s => s.Id == id);
             return View(song);
         }
 
@@ -42,17 +42,18 @@ namespace Musician.Controllers
             }
         }
 
-        public IActionResult Update(string title)
+        public IActionResult Update(int id)
         {
-            Song song = context.Songs.FirstOrDefault(y => y.Title == title);
+            Song song = context.Songs.FirstOrDefault(y => y.Id == id);
             return View(song);
         }
         [HttpPost]
-        public IActionResult Update(string title , Song NewSong)
+        public IActionResult Update(int id , Song NewSong)
         {
-            var song = context.Songs.FirstOrDefault(X => X.Title == title);
+            var song = context.Songs.FirstOrDefault(X => X.Id == id);
             if (song.Author != null)
             {
+                song.Title = NewSong.Title;
                 song.Author = NewSong.Author;
             
                 context.SaveChanges();
@@ -65,9 +66,9 @@ namespace Musician.Controllers
             }
         }
 
-        public IActionResult Delete(string title)
+        public IActionResult Delete(int id)
         {
-            Song song = context.Songs.FirstOrDefault(a => a.Title == title);
+            Song song = context.Songs.FirstOrDefault(a => a.Id == id);
             context.Songs.Remove(song);
             context.SaveChanges();
             return RedirectToAction("Index");
