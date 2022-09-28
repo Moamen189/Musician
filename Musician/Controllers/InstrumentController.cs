@@ -16,9 +16,9 @@ namespace Musician.Controllers
             return View(instrument);
         }
 
-        public IActionResult Details(string name)
+        public IActionResult Details(int id)
         {
-            Instrument instrument = context.Instruments.FirstOrDefault(x => x.Name == name);
+            Instrument instrument = context.Instruments.FirstOrDefault(x => x.Id == id);
             return View(instrument);
         }
 
@@ -43,15 +43,15 @@ namespace Musician.Controllers
             }
         }
 
-        public IActionResult Update(string name)
+        public IActionResult Update(int id)
         {
-            Instrument instrument = context.Instruments.FirstOrDefault(x => x.Name == name);
+            Instrument instrument = context.Instruments.FirstOrDefault(x => x.Id == id);
             return View(instrument);
         }
         [HttpPost]
-        public IActionResult Update(string name , Instrument NewInstrument)
+        public IActionResult Update(int id , Instrument NewInstrument)
         {
-            var instrument = context.Instruments.FirstOrDefault(X => X.Name == name);
+            var instrument = context.Instruments.FirstOrDefault(X => X.Id == id);
             if (instrument.Key != null)
             {
                 instrument.Key = instrument.Key;
@@ -65,9 +65,9 @@ namespace Musician.Controllers
             }
         }
 
-        public IActionResult Delete(string name)
+        public IActionResult Delete(int id)
         {
-            Instrument insttrument = context.Instruments.FirstOrDefault(a => a.Name == name);
+            Instrument insttrument = context.Instruments.FirstOrDefault(a => a.Id == id);
             context.Instruments.Remove(insttrument);
             context.SaveChanges();
             return RedirectToAction("Index");
