@@ -6,8 +6,10 @@ namespace Musician.Models
 {
     public class Instrument
     {
-        [MaxLength(50)]
         [Key]
+        public int Id { get; set; }
+
+        [MaxLength(50)]
         public string Name { get; set; }
 
         public string Key { get; set; }

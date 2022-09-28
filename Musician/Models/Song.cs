@@ -7,6 +7,9 @@ namespace Musician.Models
     public class Song
     {
         [Key]
+
+        public int Id { get; set; }
+
         public string Title { get; set; }
         [MaxLength(100)]
 

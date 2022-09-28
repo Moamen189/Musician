@@ -45,16 +45,15 @@ namespace Musician
             app.UseEndpoints(endpoints =>
             {
 
-          
-
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-                     );
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}"
+                   ); 
                 endpoints.MapControllerRoute(
-                   name: "default2",
-                   pattern: "{controller=Song}/{action=Index}/{title?}");
+                 name: "default2",
+                 pattern: "{controller=Song}/{action=Index}/{title?}");
 
+              
                 endpoints.MapControllerRoute(
                   name: "default3",
                   pattern: "{controller=Instrument}/{action=Index}/{name?}");
